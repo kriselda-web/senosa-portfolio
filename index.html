@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kristle Reign Senosa - Web Portfolio</title>
+<meta name="description" content="Passionate about building modern web applications using Python, Flask, JavaScript, and Firebase. I love turning ideas into real-world solutions.">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        },
+        colors: {
+          accent: '#6D28D9',
+          accent2: '#8B5CF6',
+          ink: '#14121F',
+          surface: '#F6F4FB',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
+
+<!-- Lucide icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent z-[60]" style="width:0%"></div>
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#home" class="text-lg font-extrabold tracking-tight text-accent">Krizzyy<span class="text-slate-800">.</span></a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certificates" class="nav-link">Certificates</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="hidden sm:flex items-center gap-2">
+      <a href="static/files/school%20resume.pdf" class="btn-primary inline-flex items-center gap-1.5 border border-slate-200 hover:border-accent hover:text-accent transition-colors text-slate-700 text-sm font-semibold px-4 py-2">
+        <i data-lucide="file-text" class="w-4 h-4"></i> Resume
+      </a>
+      <a href="static/files/CV.pdf" class="btn-primary inline-flex items-center gap-1.5 bg-accent hover:bg-violet-700 transition-colors text-white text-sm font-semibold px-4 py-2">
+        <i data-lucide="download" class="w-4 h-4"></i> CV
+      </a>
+    </div>
+
+    <button id="menu-btn" class="md:hidden text-slate-700">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-medium text-slate-600">
+    <a href="#home" class="block">Home</a>
+    <a href="#about" class="block">About</a>
+    <a href="#skills" class="block">Skills</a>
+    <a href="#projects" class="block">Projects</a>
+    <a href="#certificates" class="block">Certificates</a>
+    <a href="#contact" class="block">Contact</a>
+    <a href="static/files/CV.pdf" class="block">Resume</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="relative overflow-hidden bg-gradient-to-br from-violet-50 via-purple-50 to-white">
+  <div class="absolute -right-24 -top-24 w-96 h-96 bg-violet-200/40 rounded-full blur-3xl"></div>
+  <div class="absolute left-1/3 bottom-0 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.1fr_0.9fr] gap-6 items-center">
+    <div data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-accent mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+        FULL STACK DEVELOPER
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-ink leading-[1.1] tracking-tight">
+        Hi, I'm <span class="text-accent">Kristle Reign Senosa</span>
+      </h1>
+      <p class="mt-3 text-lg md:text-xl font-semibold text-slate-700">
+        I build web applications that <span class="text-accent">make an impact.</span>
+      </p>
+      <p class="mt-4 text-sm text-slate-500 leading-relaxed max-w-md">
+        Passionate about building modern web applications using Python, Flask, JavaScript, and Firebase. I love turning ideas into real-world solutions.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#projects" class="btn-primary inline-flex items-center gap-1.5 bg-accent hover:bg-violet-700 transition-colors text-white text-sm font-semibold px-5 py-2.5">
+          View My Work <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#contact" class="btn-primary inline-flex items-center gap-1.5 border border-slate-200 hover:border-accent hover:text-accent transition-colors text-slate-700 text-sm font-semibold px-5 py-2.5">
+          Contact Me <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="mt-6 flex items-center gap-3">
+        <span class="text-xs text-slate-400">Follow me</span>
+        <a href="https://github.com/kriselda-web" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+          <img src="https://cdn.simpleicons.org/github/475569" alt="GitHub" class="w-4 h-4">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+          <span class="text-[11px] font-bold">in</span>
+        </a>
+        <a href="mailto:kristlesenosa@gmail.com" class="social-btn" aria-label="Email">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="hero-photo-frame">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden bg-slate-100 flex items-center justify-center">
+          
+            <img src="static/images/kriz.jpg" alt="Kristle Reign Senosa" class="w-full h-full object-cover">
+          
+        </div>
+        <div class="hero-badge">
+          <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Available for work
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Me -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-10">
+  <div class="flex items-center justify-between mb-4" data-aos="fade-up">
+    <h2 class="flex items-center gap-2 text-sm font-bold text-slate-800">
+      <i data-lucide="user-round" class="w-4 h-4 text-accent"></i> About Me
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-[1.3fr_1fr_auto] gap-6 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm" data-aos="fade-up">
+    <p class="text-sm text-slate-500 leading-relaxed">
+      I'm a BSIT student and aspiring Full Stack Developer. I enjoy developing web applications, solving problems, and learning new technologies. I build projects with clean UI, efficient code, and great user experience.
+    </p>
+
+    <div class="space-y-3 text-sm">
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="user" class="w-4 h-4 text-accent mt-0.5"></i>
+        <div><p class="text-xs text-slate-400">Name</p><p class="font-medium text-slate-700">Kristle Reign Senosa</p></div>
+      </div>
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="cake" class="w-4 h-4 text-accent mt-0.5"></i>
+        <div><p class="text-xs text-slate-400">Age</p><p class="font-medium text-slate-700">22</p></div>
+      </div>
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="map-pin" class="w-4 h-4 text-accent mt-0.5"></i>
+        <div><p class="text-xs text-slate-400">Location</p><p class="font-medium text-slate-700">Iloilo City, Philippines</p></div>
+      </div>
+    </div>
+
+    <div class="space-y-3 text-sm">
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="mail" class="w-4 h-4 text-accent mt-0.5"></i>
+        <div><p class="text-xs text-slate-400">Email</p><p class="font-medium text-slate-700">kristlesenosa@gmail.com</p></div>
+      </div>
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5"></i>
+        <div><p class="text-xs text-slate-400">Availability</p><p class="font-medium text-slate-700">Open for opportunities</p></div>
+      </div>
+      <button class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-accent border border-violet-200 hover:bg-violet-50 transition-colors px-3 py-1.5 rounded-lg">
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> More About Me
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section id="projects" class="max-w-6xl mx-auto px-6 py-10">
+  <div class="flex items-center justify-between mb-4" data-aos="fade-up">
+    <h2 class="flex items-center gap-2 text-sm font-bold text-slate-800">
+      <i data-lucide="folder-kanban" class="w-4 h-4 text-accent"></i> Featured Projects
+    </h2>
+    <a href="#projects" class="text-xs font-semibold text-accent flex items-center gap-1">View All Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-5">
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="0">
+      <div class="h-32 bg-gradient-to-br from-amber-500/30 to-rose-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Mrs. Brave Cake Shop</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Order premade or fully custom cakes, book delivery, and chat with the shop in real time — with live order tracking and an admin dashboard for sales and inventory analytics.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Firebase</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/StressWare/Capstone-CakeShop" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+          <a href="https://mrs-braves-cakes.onrender.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="100">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Portfolio Website</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Tailwind</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="200">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">EDUGEYYYT</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Enrollment System dedicated for PHINMA UI.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/krizzyy-dev/EDUGEYYYT" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="300">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Barangay Portal System</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="400">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Secure CRUD System</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="500">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Gem Rush Game</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="600">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">ScentSation</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="700">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Grandeur</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="800">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Bean and Beyond Coffee</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">Key personal points to showcase built with Flask and modern design to showcase my projects and skills.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">AOS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-aos="fade-up" data-aos-delay="900">
+      <div class="h-32 bg-gradient-to-br from-violet-500/30 to-purple-500/20 flex items-center justify-center relative">
+        
+          <i data-lucide="layout-grid" class="w-8 h-8 text-white/70"></i>
+        
+        <span class="absolute top-2.5 right-2.5 text-[10px] font-semibold bg-white/90 text-slate-600 px-2 py-0.5 rounded-full">Web App</span>
+      </div>
+      <div class="p-4">
+        <h3 class="text-sm font-bold text-slate-800">Car Showcase</h3>
+        <p class="mt-1.5 text-xs text-slate-500 leading-relaxed line-clamp-3">A responsive Flask-based car showcase website featuring vehicle listings, categories, and detailed car information with a modern and user-friendly interface.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Python</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Flask</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">MySQL</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">HTML</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">CSS</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">JavaScript</span>
+          
+          <span class="text-[10px] font-medium bg-violet-50 text-accent px-2 py-0.5 rounded-full">Jinja2</span>
+          
+        </div>
+        
+        <div class="mt-4 flex items-center gap-4 border-t border-slate-100 pt-3">
+          
+          <a href="https://github.com/krizzyy-dev/Car-Showcase" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-accent transition-colors">
+            <img src="https://cdn.simpleicons.org/github/475569" alt="" class="w-3.5 h-3.5"> Code
+          </a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Tech Stack + Certifications -->
+<section id="skills" class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-5">
+  <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm" data-aos="fade-up">
+    <h2 class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4">
+      <i data-lucide="cpu" class="w-4 h-4 text-accent"></i> Tech Stack
+    </h2>
+    <div class="grid grid-cols-4 gap-4">
+      
+      <div class="flex flex-col items-center gap-1.5" title="Python">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/python" alt="Python" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">Python</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="Flask">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/flask" alt="Flask" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">Flask</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="JavaScript">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">JavaScript</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="HTML5">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/html5" alt="HTML5" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">HTML5</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="CSS3">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/css3" alt="CSS3" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">CSS3</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="MySQL">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/mysql" alt="MySQL" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">MySQL</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="Firebase">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/firebase" alt="Firebase" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">Firebase</span>
+      </div>
+      
+      <div class="flex flex-col items-center gap-1.5" title="Git">
+        <div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/git" alt="Git" class="w-5 h-5">
+        </div>
+        <span class="text-[10px] text-slate-500 text-center">Git</span>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="certificates" class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4">
+      <i data-lucide="award" class="w-4 h-4 text-accent"></i> Certifications
+    </h2>
+    <ul class="space-y-3">
+
+      <li class="flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="static/images/badges/python-essentials-1.1.png" alt="Python Essentials 1 badge" class="w-8 h-8 rounded-md object-contain shrink-0">
+          <div>
+            <span class="font-medium text-slate-700 block">Python Essentials 1</span>
+            <a href="static/images/certificates/python-essentials1.pdf"
+               target="_blank"
+               rel="noopener"
+               class="text-[11px] text-accent hover:underline flex items-center gap-0.5 mt-0.5">
+              Certificate <i data-lucide="file-text" class="w-2.5 h-2.5"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Cisco Networking Academy</p>
+          <p class="text-[10px] text-slate-400">2026</p>
+        </div>
+      </li>
+      
+      <li class="flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="static/images/badges/introduction-to-data-science.png" alt="Introduction to Data Science badge" class="w-8 h-8 rounded-md object-contain shrink-0">
+          <div>
+            <span class="font-medium text-slate-700 block">Introduction to Data Science</span>
+            <a href="static/images/certificates/data science.pdf"
+               target="_blank"
+               rel="noopener"
+               class="text-[11px] text-accent hover:underline flex items-center gap-0.5 mt-0.5">
+              Certificate <i data-lucide="file-text" class="w-2.5 h-2.5"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Cisco Networking Academy</p>
+          <p class="text-[10px] text-slate-400">2026</p>
+        </div>
+      </li>
+
+      <li class="flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="static/images/badges/data-analytics-essentials.png" alt="Data Analytics Essentials badge" class="w-8 h-8 rounded-md object-contain shrink-0">
+          <div>
+            <span class="font-medium text-slate-700 block">Data Analytics Essentials</span>
+            <a href="static/images/certificates/data analytics.pdf"
+               target="_blank"
+               rel="noopener"
+               class="text-[11px] text-accent hover:underline flex items-center gap-0.5 mt-0.5">
+              Certificate <i data-lucide="file-text" class="w-2.5 h-2.5"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Cisco Networking Academy</p>
+          <p class="text-[10px] text-slate-400">2026</p>
+        </div>
+      </li>
+
+      <li class="flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="static/images/badges/introduction-to-modern-ai.png" alt="Introduction to Modern AI badge" class="w-8 h-8 rounded-md object-contain shrink-0">
+          <div>
+            <span class="font-medium text-slate-700 block">Introduction to Modern AI</span>
+            <a href="static/images/certificates/modern ai.pdf"
+               target="_blank"
+               rel="noopener"
+               class="text-[11px] text-accent hover:underline flex items-center gap-0.5 mt-0.5">
+              Certificate <i data-lucide="file-text" class="w-2.5 h-2.5"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Cisco Networking Academy</p>
+          <p class="text-[10px] text-slate-400">2026</p>
+        </div>
+      </li>
+
+      <li class="flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <img src="static/images/badges/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity badge" class="w-8 h-8 rounded-md object-contain shrink-0">
+          <div>
+            <span class="font-medium text-slate-700 block">Introduction to Cybersecurity</span>
+            <a href="static/images/certificates/cyber.pdf"
+               target="_blank"
+               rel="noopener"
+               class="text-[11px] text-accent hover:underline flex items-center gap-0.5 mt-0.5">
+              Certificate <i data-lucide="file-text" class="w-2.5 h-2.5"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Cisco Networking Academy</p>
+          <p class="text-[10px] text-slate-400">2026</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- Contact footer -->
+<footer id="contact" class="bg-gradient-to-r from-accent to-violet-500">
+  <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </div>
+      <div>
+        <p class="text-sm font-bold">Let's Work Together</p>
+        <p class="text-xs text-white/80">Have a project in mind? Let's connect and see how we can bring it to life.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-5 text-xs">
+      <a href="mailto:kristlesenosa@gmail.com" class="flex items-center gap-1.5 hover:text-white/80">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i> kristlesenosa@gmail.com
+      </a>
+      <a href="tel:+63 9853193693" class="flex items-center gap-1.5 hover:text-white/80">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i> +63 9853193693
+      </a>
+      <span class="flex items-center gap-1.5">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Brgy. Inangayan Santa Barbara Iloilo 5002
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scroll-top" class="hidden fixed bottom-6 right-6 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg hover:bg-violet-700 transition-colors z-50">
+  <i data-lucide="arrow-up" class="w-4 h-4"></i>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="static/js/script.js"></script>
+</body>
+</html>
