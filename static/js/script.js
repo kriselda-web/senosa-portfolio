@@ -42,9 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Active nav link on scroll
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  // Smooth-scroll to a section when a nav link is clicked
+  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a[href^="#"]');
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      const id = href?.replace("#", "");
+      const target = id ? document.getElementById(id) : null;
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", href);
+      }
+    });
+  });
+
+  // Active nav link on scroll (scroll-spy)
+  const sections = document.querySelectorAll("section[id], footer[id]");
 
   window.addEventListener("scroll", () => {
     let current = "";
